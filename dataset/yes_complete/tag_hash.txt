@@ -1,0 +1,250 @@
+0, rock
+1, pop
+2, favorites
+3, alternative
+4, love
+5, male vocalists
+6, american
+7, indie
+8, classic rock
+9, awesome
+10, jazz
+11, beautiful
+12, soul
+13, female vocalists
+14, 00s
+15, mellow
+16, alternative rock
+17, oldies
+18, favorite
+19, 80s
+20, chill
+21, dance
+22, singer-songwriter
+23, 90s
+24, classic
+25, favourites
+26, cool
+27, 70s
+28, hard rock
+29, chillout
+30, indie rock
+31, guitar
+32, easy listening
+33, catchy
+34, favorite songs
+35, rnb
+36, male vocalist
+37, electronic
+38, sexy
+39, country
+40, loved
+41, blues
+42, fun
+43, british
+44, party
+45, favourite
+46, happy
+47, folk
+48, female vocalist
+49, hip-hop
+50, pop rock
+51, metal
+52, 60s
+53, funk
+54, acoustic
+55, love songs
+56, upbeat
+57, soundtrack
+58, amazing
+59, sad
+60, romantic
+61, soft rock
+62, favourite songs
+63, smooth
+64, smooth jazz
+65, hip hop
+66, great song
+67, usa
+68, instrumental
+69, ballad
+70, seen live
+71, piano
+72, rap
+73, melancholy
+74, summer
+75, epic
+76, indie pop
+77, experimental
+78, love it
+79, punk
+80, rhythm and blues
+81, heavy metal
+82, psychedelic
+83, memories
+84, rock n roll
+85, relaxing
+86, electronica
+87, love at first listen
+88, female
+89, my favorite
+90, good
+91, funky
+92, relax
+93, fucking awesome
+94, progressive rock
+95, r&b
+96, cover
+97, great
+98, 2000s
+99, lounge
+100, best
+101, heard on pandora
+102, live
+103, blues rock
+104, nostalgia
+105, latin
+106, energetic
+107, slow
+108, christmas
+109, drjazzmrfunkmusic
+110, top 40
+111, sweet
+112, love song
+113, melancholic
+114, fav
+115, 77davez-all-tracks
+116, good stuff
+117, uk
+118, new wave
+119, rock and roll
+120, old school
+121, vocal
+122, nice
+123, lovely
+124, female vocals
+125, punk rock
+126, christian
+127, great lyrics
+128, english
+129, reggae
+130, soft
+131, rb
+132, feel good
+133, driving
+134, urban
+135, groovy
+136, folk rock
+137, americana
+138, classic country
+139, uplifting
+140, downtempo
+141, 2010
+142, ambient
+143, radioparadise
+144, disco
+145, easy
+146, radiotsar approved
+147, 10s
+148, covers
+149, r and b
+150, perfect
+151, dreamy
+152, emo
+153, male vocals
+154, wjlb-fm
+155, psychedelic rock
+156, dark
+157, electro
+158, old school soul
+159, groove
+160, <3
+161, post-punk
+162, britpop
+163, grunge
+164, slow jams
+165, radio paradise
+166, hardcore
+167, atmospheric
+168, major key tonality
+169, the best
+170, alternative metal
+171, spanish
+172, guilty pleasures
+173, 80's
+174, songs i absolutely love
+175, brilliant
+176, vocal jazz
+177, jazzy
+178, saxophone
+179, my favorites
+180, guilty pleasure
+181, 50s
+182, alternative  punk
+183, 2009
+184, poprock
+185, gospel
+186, swing
+187, canadian
+188, adult contemporary
+189, jazz vocal
+190, progressive
+191, emotional
+192, 1980s
+193, aitch
+194, faves
+195, 2008
+196, retro
+197, hiphop
+198, ballads
+199, heavy
+200, nostalgic
+201, acclaimed music top 3000
+202, fusion
+203, masterpiece
+204, california
+205, motown
+206, classics
+207, best songs ever
+208, sex
+209, rockin
+210, favorite artists
+211, my pop music
+212, new york
+213, alt-country
+214, melodic
+215, 1970s
+216, garage rock
+217, pop-rock
+218, worship
+219, soulful
+220, male
+221, calm
+222, bass
+223, sing along
+224, genius
+225, a subtle use of vocal harmony
+226, 1960s
+227, quiet storm
+228, radio music
+229, synthpop
+230, glam rock
+231, all time favourites
+232, southern rock
+233, other
+234, classic soul
+235, 2007
+236, christian rock
+237, alt rock
+238, malloy2000 playlist - top songs - classical to metal
+239, legend
+240, powerful
+241, sensual
+242, hot
+243, feelgood
+244, lo-fi
+245, cute
+246, political
+247, favs
+248, 1990s
+249, close harmony

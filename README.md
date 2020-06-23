@@ -1,2 +1,2 @@
-# song2vec-music-recommender
-Word2Vec implementation
+# Song2Vec: Music Recommender
+Implementation of Word2Vec

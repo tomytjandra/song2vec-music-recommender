@@ -1,0 +1,51 @@
+-Overview
+
+This datasets are collected by Shuo Chen (shuochen@cs.cornell.edu) from Dept. of Computer Science, Cornell University. The playlists and tag data are respectively crawled from Yes.com and Last.fm. Thus we do not own these data. Please contact Yes.com and Last.fm for any commercial use.
+
+Yes.com is a website that provides radio playlists from hundreds of radio stations in the United States. By using the web based API http://api.yes.com, one can retrieve the playlist record of a specified station for the last 7 days. We collected as many playlists as possible by specifying all possible genres and getting playlists from all possible stations. The collection lasted from December 2010 to May 2011. This lead to a dataset of 75,262 songs and 2,840,553 transitions. To get datasets of various sizes, we pruned the raw data so that only the songs with a number of appearances above a certain threshold are kept. We then divide the pruned set into a training set and a testing set, making sure that each song has appeared at least once in the training set. We name them as yes_small, yes_big and yes_complete, whose basic statistics are shown below.  
+
+                               yes_small       yes_big       yes_complete      
+Appearance Threshold           20              5             0 
+Number of Songs                3,168           9,775         75,262 
+Number of Train Transitions    134,431         172,510       1,542,372 
+Number of Test Transitions     1,191,279       1,602,079     1,298,181
+
+
+Last.fm provides tag information for songs, artists and albums that is contributed by its millions of users. For each of the songs in our playlists dataset, we query the Last.fm API http://www.last.fm/api for the name of the artist and the song, retrieving the top tags.  We then prune the tag set by only keeping the top 250 tags with the most appearances across songs. Note that Last.fm did not provide any tags for about 20% of songs.
+
+Please see the references for more details about our work. Also, our software Logistic Markov Embedding (LME) and Multispace Logistic Markov Embedding (Multi-LME) which directly learns on these datasets can be downloaded at http://lme.joachims.org (Note that LME is not efficient enough to handle yes_complete).
+
+-Format
+
+All of the folders contain the following files:
+
+train.txt         Training playlists, using integer ID to represent songs
+test.txt          Testing playlists, using integer ID to represent songs
+tags.txt          Social tags, using integer ID to represent songs
+song_hash.txt     Mapping from integer ID to song's title and artist
+tag_hash.txt      Mapping from integer ID to tag's name
+
+Format of the playlist data:
+The first line of the data file is the IDs (not the integer ID, but IDs from other sources for identifying the songs) for the songs, separated by a space. The second line are the number of appearances of each song in the file, also separated by a space. Starting from the third line are the playlists, with each song represented by its integer ID in this file (from 0 to the total number of songs minus one). Note that in the playlist data file, each line is ended with a space.
+
+Format of the tag data:
+The tag data file has the same number of lines as the total number of songs in the playlist data. Each line is the tags for a song, represented by integers from 0 to the total number of tags minus one and separated by space. If a song does not have any tag, its line is just a '#'. Note that for the tag file, there is no space at the end of each line.
+
+Format of the song mapping file:
+Each line corresponds to one song, and has the format 
+Integer_ID \t Title \t Artist \n
+(The spaces here are only for making it easy to read. They do not exist in the real data file.) 
+
+Format of the tag mapping file:
+Each line corresponds to one song, and has the format 
+Integer_ID, Name\n
+
+-References
+
+If you use the datasets, please cite the following papers:
+
+[1] Shuo Chen, Joshua L. Moore, Douglas Turnbull, Thorsten Joachims, Playlist Prediction via Metric Embedding, ACM Conference on Knowledge Discovery and Data Mining (KDD), 2012.
+
+[2] Joshua L. Moore, Shuo Chen, Thorsten Joachims, Douglas Turnbull, Learning to Embed Songs and Tags for Playlists Prediction, International Society for Music Information Retrieval (ISMIR), 2012.
+
+[3] Shuo Chen, Jiexun Xu, Thorsten Joachims, Multi-space Probabilistic Sequence Modeling, ACM Conference on Knowledge Discovery and Data Mining (KDD), 2013.
