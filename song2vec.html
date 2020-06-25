@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>song2vec with content</title>
+<title>song2vec</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13078,7 +13078,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Background" data-toc-modified-id="Background-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Background</a></span></li><li><span><a href="#Import-Libraries" data-toc-modified-id="Import-Libraries-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Import Libraries</a></span></li><li><span><a href="#Data-Cleansing" data-toc-modified-id="Data-Cleansing-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Data Cleansing</a></span><ul class="toc-item"><li><span><a href="#Songs" data-toc-modified-id="Songs-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Songs</a></span></li><li><span><a href="#Tags" data-toc-modified-id="Tags-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Tags</a></span></li><li><span><a href="#Unknown-Songs" data-toc-modified-id="Unknown-Songs-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Unknown Songs</a></span></li><li><span><a href="#Playlist" data-toc-modified-id="Playlist-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Playlist</a></span></li></ul></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Modeling</a></span><ul class="toc-item"><li><span><a href="#Song2Vec" data-toc-modified-id="Song2Vec-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Song2Vec</a></span><ul class="toc-item"><li><span><a href="#Training" data-toc-modified-id="Training-4.1.1"><span class="toc-item-num">4.1.1&nbsp;&nbsp;</span>Training</a></span></li><li><span><a href="#Loss-Evaluation" data-toc-modified-id="Loss-Evaluation-4.1.2"><span class="toc-item-num">4.1.2&nbsp;&nbsp;</span>Loss Evaluation</a></span></li><li><span><a href="#Vectors-Visualization" data-toc-modified-id="Vectors-Visualization-4.1.3"><span class="toc-item-num">4.1.3&nbsp;&nbsp;</span>Vectors Visualization</a></span></li></ul></li><li><span><a href="#Spherical-K-Means-Clustering" data-toc-modified-id="Spherical-K-Means-Clustering-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Spherical K-Means Clustering</a></span><ul class="toc-item"><li><span><a href="#Illustration" data-toc-modified-id="Illustration-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>Illustration</a></span></li><li><span><a href="#Perform-Clustering" data-toc-modified-id="Perform-Clustering-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>Perform Clustering</a></span></li><li><span><a href="#Visualize-Clusters" data-toc-modified-id="Visualize-Clusters-4.2.3"><span class="toc-item-num">4.2.3&nbsp;&nbsp;</span>Visualize Clusters</a></span></li></ul></li></ul></li><li><span><a href="#Start-Recommending" data-toc-modified-id="Start-Recommending-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Start Recommending</a></span></li><li><span><a href="#Evaluation" data-toc-modified-id="Evaluation-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Evaluation</a></span><ul class="toc-item"><li><span><a href="#Random-Recommender" data-toc-modified-id="Random-Recommender-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Random Recommender</a></span></li><li><span><a href="#Song-Tags-Recommender" data-toc-modified-id="Song-Tags-Recommender-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Song Tags Recommender</a></span></li><li><span><a href="#Cluster-based-Recommender" data-toc-modified-id="Cluster-based-Recommender-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Cluster-based Recommender</a></span></li><li><span><a href="#Song2Vec-Recommender" data-toc-modified-id="Song2Vec-Recommender-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Song2Vec Recommender</a></span></li><li><span><a href="#Comparison" data-toc-modified-id="Comparison-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Comparison</a></span></li></ul></li><li><span><a href="#Conclusion" data-toc-modified-id="Conclusion-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Conclusion</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Background" data-toc-modified-id="Background-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Background</a></span></li><li><span><a href="#Import-Libraries" data-toc-modified-id="Import-Libraries-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Import Libraries</a></span></li><li><span><a href="#Data-Cleansing" data-toc-modified-id="Data-Cleansing-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Data Cleansing</a></span><ul class="toc-item"><li><span><a href="#Songs" data-toc-modified-id="Songs-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Songs</a></span></li><li><span><a href="#Tags" data-toc-modified-id="Tags-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Tags</a></span></li><li><span><a href="#Unknown-Songs" data-toc-modified-id="Unknown-Songs-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Unknown Songs</a></span></li><li><span><a href="#Playlist" data-toc-modified-id="Playlist-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Playlist</a></span></li></ul></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Modeling</a></span><ul class="toc-item"><li><span><a href="#Song2Vec" data-toc-modified-id="Song2Vec-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Song2Vec</a></span><ul class="toc-item"><li><span><a href="#Training" data-toc-modified-id="Training-4.1.1"><span class="toc-item-num">4.1.1&nbsp;&nbsp;</span>Training</a></span></li><li><span><a href="#Loss-Evaluation" data-toc-modified-id="Loss-Evaluation-4.1.2"><span class="toc-item-num">4.1.2&nbsp;&nbsp;</span>Loss Evaluation</a></span></li><li><span><a href="#Vectors-Visualization" data-toc-modified-id="Vectors-Visualization-4.1.3"><span class="toc-item-num">4.1.3&nbsp;&nbsp;</span>Vectors Visualization</a></span></li></ul></li><li><span><a href="#Clustering" data-toc-modified-id="Clustering-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Clustering</a></span><ul class="toc-item"><li><span><a href="#Sperical-K-Means" data-toc-modified-id="Sperical-K-Means-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>Sperical K-Means</a></span></li><li><span><a href="#Visualize-Clusters" data-toc-modified-id="Visualize-Clusters-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>Visualize Clusters</a></span></li></ul></li></ul></li><li><span><a href="#Start-Recommending" data-toc-modified-id="Start-Recommending-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Start Recommending</a></span></li><li><span><a href="#Evaluation" data-toc-modified-id="Evaluation-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Evaluation</a></span><ul class="toc-item"><li><span><a href="#Random-Recommender" data-toc-modified-id="Random-Recommender-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Random Recommender</a></span></li><li><span><a href="#Song-Tags-Recommender" data-toc-modified-id="Song-Tags-Recommender-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Song Tags Recommender</a></span></li><li><span><a href="#Cluster-based-Recommender" data-toc-modified-id="Cluster-based-Recommender-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Cluster-based Recommender</a></span></li><li><span><a href="#Song2Vec-Recommender" data-toc-modified-id="Song2Vec-Recommender-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>Song2Vec Recommender</a></span></li><li><span><a href="#Comparison" data-toc-modified-id="Comparison-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Comparison</a></span></li></ul></li><li><span><a href="#Conclusion" data-toc-modified-id="Conclusion-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Conclusion</a></span></li></ul></div>
 </div>
 </div>
 </div>
@@ -13297,7 +13297,7 @@ Apple Music, Google Play Music, Pandora, Spotify, Youtube Music, to name a few. 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Songs">Songs<a class="anchor-link" href="#Songs">&#182;</a></h3><p>Each song has their own <code>song_id</code> which maps to exactly one <code>title</code> and <code>artist</code> name. There are 75252 unique songs present in <code>song_hash.txt</code>.</p>
+<h3 id="Songs">Songs<a class="anchor-link" href="#Songs">&#182;</a></h3><p>Each song has its own <code>song_id</code> which maps to exactly one <code>title</code> and <code>artist</code> name. There are 75252 unique songs present in <code>song_hash.txt</code>.</p>
 
 </div>
 </div>
@@ -13439,7 +13439,7 @@ Apple Music, Google Play Music, Pandora, Spotify, Youtube Music, to name a few. 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Tags">Tags<a class="anchor-link" href="#Tags">&#182;</a></h3><p>Each song have several tags which exist in <code>tags.txt</code> and the mapping is provided in <code>tag_hash.txt</code>.</p>
+<h3 id="Tags">Tags<a class="anchor-link" href="#Tags">&#182;</a></h3><p>Each song has several tags that exist in <code>tags.txt</code> and the mapping is provided in <code>tag_hash.txt</code>.</p>
 
 </div>
 </div>
@@ -13518,7 +13518,7 @@ Apple Music, Google Play Music, Pandora, Spotify, Youtube Music, to name a few. 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>song_tags</code> is combined and merged with previous <code>songs</code>.</p>
+<p>The <code>song_tags</code> dataframe is combined and merged with previous <code>songs</code>.</p>
 
 </div>
 </div>
@@ -13639,7 +13639,7 @@ Apple Music, Google Play Music, Pandora, Spotify, Youtube Music, to name a few. 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Unknown songs are defined as a song that don't have either <code>artist</code> or <code>title</code>, indicated by dash (-) character. Remove these unknown songs from <code>songs</code>.</p>
+<p>Unknown songs are defined as a song that doesn't have either <code>artist</code> or <code>title</code>, indicated by dash (-) character. Remove these unknown songs from <code>songs</code>.</p>
 
 </div>
 </div>
@@ -13668,7 +13668,7 @@ Apple Music, Google Play Music, Pandora, Spotify, Youtube Music, to name a few. 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>playlist</code> is a list of lists of songs (represented with its <code>song_id</code>) from <code>train.txt</code> and <code>test.txt</code>. There are 15910 playlists exist in the data.</p>
+<p><code>playlist</code> is a list of lists of songs (represented with its <code>song_id</code>) from <code>train.txt</code> and <code>test.txt</code>. There are 15910 playlists that exist in the data.</p>
 
 </div>
 </div>
@@ -13708,7 +13708,7 @@ Apple Music, Google Play Music, Pandora, Spotify, Youtube Music, to name a few. 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Take a look on how the playlist is represented in a list. Recall that these playlists are treated as sentences and the <code>song_id</code> as token of words.</p>
+<p>Take a look at how the playlist is represented in a list. Recall that these playlists are treated as sentences and the <code>song_id</code> as a token of words.</p>
 
 </div>
 </div>
@@ -13784,7 +13784,7 @@ Playlist Idx. 2: 177 Songs
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Remove playlist with zero or one songs, since the model wouldn't capture any sequence in that list.</p>
+<p>Remove playlist with zero or one song, since the model wouldn't capture any sequence in that list.</p>
 
 </div>
 </div>
@@ -13918,9 +13918,9 @@ Playlist Idx. 2: 177 Songs
 <ul>
 <li>The input layer is a one-hot-encoded vector of size $V$ (vocabulary size).</li>
 <li>$W_{V \times N}$ is the weight matrix that projects the input $x$ to the hidden layer. <strong>These values are the embedded vectors</strong>.</li>
-<li>The hidden layer contains $N$ neurons (hyperparameter), it just copy the weighted sum of inputs to the next layer without any activation function.</li>
+<li>The hidden layer contains $N$ neurons (hyperparameter), it just copies the weighted sum of inputs to the next layer without any activation function.</li>
 <li>$W'_{N \times V}$ is the weight matrix that maps the hidden layer outputs to the final output layer.</li>
-<li>The output layer is again a $V$ length vector, with softmax activation function.</li>
+<li>The output layer is again a $V$ length vector, with a softmax activation function.</li>
 </ul>
 
 </div>
@@ -13956,10 +13956,10 @@ Playlist Idx. 2: 177 Songs
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Up until this point, you should have understand the general overview on how the Word2Vec works. But, there is an issue with the softmax function — it is <strong>computationally very expensive</strong>, as it requires scanning through the entire output embeddings matrix to compute the probability distribution of all V words, where V can be millions or more. The softmax function is defined as:</p>
+<p>Up until this point, you should have understood the general overview of how the Word2Vec works. But, there is an issue with the softmax function — it is <strong>computationally very expensive</strong>, as it requires scanning through the entire output embeddings matrix to compute the probability distribution of all V words, where V can be millions or more. The softmax function is defined as:</p>
 <p>$softmax(y_i) = \dfrac{e^{y_i}}{\sum \limits_{y=1}^V e^{y_j}}$</p>
 <p>The normalization factor in the denominator also requires $V$ iterations. When implemented in codes, the normalization factor is computed only once and cached as a Python variable, making the algorithm complexity $O(V)$.</p>
-<p>Due to this computational inefficiency, softmax function is preferably not used in most implementations of Word2Vec. Instead let's use an alternative called <strong>negative sampling</strong> with sigmoid function, which rephrases the problem into a set of independent binary logistic classification task of algorithm complexity = $O(K+1)$, where $K$ is the number of negative samples and $1$ is the positive sample. Mikolov suggest to use $K$ in range $[5, 20]$ for small vocabulary and $[2, 5]$ for a larger vocabulary.</p>
+<p>Due to this computational inefficiency, softmax function is preferably not used in most implementations of Word2Vec. Instead let's use an alternative called <strong>negative sampling</strong> with sigmoid function, which rephrases the problem into a set of independent binary logistic classification task of algorithm complexity = $O(K+1)$, where $K$ is the number of negative samples and $1$ is the positive sample. Mikolov suggests using $K$ in the range $[5, 20]$ for small vocabulary and $[2, 5]$ for a larger vocabulary.</p>
 
 </div>
 </div>
@@ -14012,7 +14012,7 @@ Playlist Idx. 2: 177 Songs
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By using <code>gensim</code>, the training process can be separated into <strong>three distinctive steps</strong>:</p>
-<p>First, instance of <code>Word2Vec()</code> is created to set up the parameters of the model and leave the model uninitialized.</p>
+<p>First, the instance of <code>Word2Vec()</code> is created to set up the parameters of the model and leave the model uninitialized.</p>
 <ul>
 <li><code>size</code>: dimensionality of the song vectors</li>
 <li><code>window</code>: maximum distance between context and target</li>
@@ -14407,7 +14407,7 @@ Time to train the model: 589.88 seconds
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The song vectors can be visualized using a gradient of colors. The model is trained using 256 dimensions, therefore there will be 256 color bars for each song, representing element values in the vector. The similarity between songs is calculated using <strong>cosine similarity</strong>:</p>
 <p>$similarity(A,B) = cos(\theta) = \frac{A.B}{\|A\| \|B\|}$</p>
-<p>Mathematically it measures the cosine of the angle between two vectors $A$ and $B$ which projected in a multi-dimensional space. Song vectors with similar context occupy close spatial positions; the cosine between such vectors should be close to 1, i.e. angle is closer to 0. The smaller the angle, higher the cosine similarity.</p>
+<p>Mathematically it measures the cosine of the angle between two vectors $A$ and $B$ which projected in a multi-dimensional space. Song vectors with similar context occupy close spatial positions; the cosine between such vectors should be close to 1, i.e. angle is closer to 0. The smaller the angle, the cosine similarity will be higher.</p>
 
 </div>
 </div>
@@ -14471,14 +14471,14 @@ Time to train the model: 589.88 seconds
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Spherical-K-Means-Clustering">Spherical K-Means Clustering<a class="anchor-link" href="#Spherical-K-Means-Clustering">&#182;</a></h3>
+<h3 id="Clustering">Clustering<a class="anchor-link" href="#Clustering">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>What can we do with the song vectors? One thing is to group them into several clusters using K-Means clustering, but keep in mind that the similarity between vectors is calculated using cosine distance instead of regular (Euclidean) distance. Therefore K-Means with cosine distance should be considered, which often called as <strong>spherical K-Means clustering</strong>. The idea is to identify the centroid such that it uniforms and minimizes the angle between each vector in a cluster. The intuition is just like looking at a cluster of stars where each point should have consistent spacing between each other. This spacing is referred as the cosine similarity.</p>
+<p>What can we do with the song vectors? One thing is to group them into several clusters using K-Means clustering, but keep in mind that the similarity between vectors is calculated using cosine distance instead of regular (Euclidean) distance. Therefore K-Means with cosine distance should be considered, which often called <strong>Spherical K-Means Clustering</strong>. The idea is to identify the centroid such that it uniforms and minimizes the angle between each vector in a cluster. The intuition is just like looking at a cluster of stars where each point should have consistent spacing between each other. This spacing is referred to as the cosine similarity.</p>
 
 </div>
 </div>
@@ -14486,7 +14486,7 @@ Time to train the model: 589.88 seconds
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Illustration">Illustration<a class="anchor-link" href="#Illustration">&#182;</a></h4>
+<h4 id="Sperical-K-Means">Sperical K-Means<a class="anchor-link" href="#Sperical-K-Means">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -14569,13 +14569,6 @@ Time to train the model: 589.88 seconds
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Perform-Clustering">Perform Clustering<a class="anchor-link" href="#Perform-Clustering">&#182;</a></h4>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14910,7 +14903,7 @@ Time to train the model: 589.88 seconds
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the end, the optimal number of clusters is set to be 110. There is a possibility that some songs don't have the embedded vectors since the <code>playlist</code> is splitted to train and test. For this case, assign the cluster as -1 instead.</p>
+<p>In the end, the optimal number of clusters is set to be 110. There is a possibility that some songs don't have the embedded vectors since the <code>playlist</code> is split to train and test. For this case, assign the cluster as -1 instead.</p>
 
 </div>
 </div>
@@ -15058,7 +15051,7 @@ Time to train the model: 589.88 seconds
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Songs that have similar context (by cosine similarity) tend to be plotted next to each other. Thus, creating distinct song clusters. Note that the clusters might look overlap to each other due to the dimensionality reduction, but in the actual dimension, they didn't.</p>
+<p>Songs that have similar context (by cosine similarity) tend to be plotted next to each other. Thus, creating distinct song clusters. Note that the clusters might look overlap to each other due to the dimensionality reduction, but in the actual dimension, they do not.</p>
 
 </div>
 </div>
@@ -15073,7 +15066,7 @@ Time to train the model: 589.88 seconds
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Congratulations! We are finally ready with the embeddings for every song that exists in <code>playlist_train</code>. How these song vectors are then used to suggest similar songs based on a certain playlist? One way is to calculate a <strong>playlist vector</strong> for each playlist by averaging together all the song vectors in that playlist. This vectors then become the query to find similar songs based on cosine similarity. Here is an illustration using a users' music streaming playlist:</p>
+<p>Congratulations! We are finally ready with the embeddings for every song that exists in <code>playlist_train</code>. How these song vectors are then used to suggest similar songs based on a certain playlist? One way is to calculate a <strong>playlist vector</strong> for each playlist by averaging together all the song vectors in that playlist. These vectors then become the query to find similar songs based on cosine similarity. Here is an illustration using a users' music streaming playlist:</p>
 <p><img src="assets/playlist-vector.gif" width="500"></p>
 <center><a href="https://towardsdatascience.com/using-word2vec-for-music-recommendations-bb9649ac2484">Song2Vec Average</a></center>
 </div>
@@ -15123,7 +15116,7 @@ Time to train the model: 589.88 seconds
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For each playlist vector, recommend top <code>n</code> similar songs based on the cosine similarity.</p>
+<p>For each playlist vector, recommend top $n$ similar songs based on the cosine similarity.</p>
 
 </div>
 </div>
@@ -15237,7 +15230,7 @@ TOP 10 RECOMMENDED SONGS
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Interestingly, the model able to capture and recommend new songs based on "Spanish" genre from <code>playlist_test</code> indexed at <code>305</code> without being explicitly stated. Great! The final step is to evaluate how this recommender perform.</p>
+<p>Interestingly, the model is able to capture and recommend new songs based on the "Spanish" genre from <code>playlist_test</code> indexed at <code>305</code> without being explicitly stated. Great! The final step is to evaluate how this recommender performs.</p>
 
 </div>
 </div>
@@ -15252,14 +15245,14 @@ TOP 10 RECOMMENDED SONGS
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>One way to evaluate the performance of a recommender system is by computing a <strong>hit rate</strong> as follows:</p>
+<p>One way to evaluate the performance of a recommender system is by computing <strong>hit rate</strong> as follows:</p>
 <ol>
 <li>For each song in a playlist, intentionally <strong>Leave-One-Out (LOO)</strong> this song.</li>
-<li>By using several system below, try to guess the LOO song.</li>
-<li>Ask the recommender for top <code>n</code> recommended songs.</li>
-<li>If the LOO song appear in the top <code>n</code> recommendation, consider it as a <strong>HIT</strong>. Otherwise not.</li>
-<li>Repeat the LOO process until the end of the playlist. Then, hit rate of a playlist is calculated by dividing the number of HIT with the length of a playlist.</li>
-<li>Repeat step 1-5 for all playlist in <code>playlist_test</code> and calculate the average of hit rate.</li>
+<li>By using several systems below, try to guess the LOO song.</li>
+<li>Ask the recommender for top $n$ recommended songs.</li>
+<li>If the LOO song appears in the top $n$ recommendation, consider it as a <strong>HIT</strong>. Otherwise not.</li>
+<li>Repeat the LOO process until the end of the playlist. Then, the hit rate of a playlist is calculated by dividing the number of HIT with the length of a playlist.</li>
+<li>Repeat step 1-5 for all playlist in <code>playlist_test</code> and calculate the <strong>Average Hit Rate at $n$ (AHR@n)</strong>.</li>
 </ol>
 
 </div>
@@ -15372,7 +15365,7 @@ TOP 10 RECOMMENDED SONGS
 <ol>
 <li>Create a list of song <code>tag_names</code> that surrounds the LOO song. The maximum distance between the LOO and context songs is defined by <code>window</code>.</li>
 <li>List all possible songs from the list.</li>
-<li>Take <code>n</code> songs randomly from the possible songs list.</li>
+<li>Take $n$ songs randomly from the possible songs list.</li>
 </ol>
 
 </div>
@@ -15509,7 +15502,7 @@ Name: song_id, Length: 251, dtype: object</pre>
 <ol>
 <li>Identify which cluster number is the most frequent (by majority voting) in surrounding songs. The maximum distance between the LOO and context songs is defined by <code>window</code>.</li>
 <li>List out possible songs from that majority cluster.</li>
-<li>Take <code>n</code> songs randomly from the possible songs list.</li>
+<li>Take $n$ songs randomly from the possible songs list.</li>
 </ol>
 
 </div>
@@ -15599,7 +15592,7 @@ Name: song_id, Length: 251, dtype: object</pre>
 <p>Lastly, evaluate the CBOW Song2Vec model as follows:</p>
 <ol>
 <li>Take the average vectors of surrounding context songs using previously defined <code>meanVectors()</code> function. The maximum distance is defined by <code>window</code>.</li>
-<li>Find top <code>n</code> similar songs based on cosine similarity using <code>similarSongsByVector()</code> function.</li>
+<li>Find top $n$ similar songs based on cosine similarity using <code>similarSongsByVector()</code> function.</li>
 </ol>
 
 </div>
@@ -15684,6 +15677,7 @@ Name: song_id, Length: 251, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, we compare the calculated Average Hit Rate at 25 (AHR@25) of the four recommender systems. The higher the AHR, the better is the system. From the bar plot below, Song2Vec outperforms other methods in terms of hit rate, which means that it can recommend a song well based on surrounding context songs. In a real-life scenario, this system may likely to be low quality since the AHR is only around 10%, but still, it is much better than no recommender system at all.</p>
 
 </div>
 </div>
@@ -15754,6 +15748,14 @@ Name: song_id, Length: 251, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Song2Vec is an implementation of Word2Vec which able to capture the context of a song based on surrounding songs in a playlist. In this notebook, we successfully exploit the sequential property of a playlist and represent each song with a 256-dimensional vector. This vector representation is then used as a recommender system based on cosine similarity score. The objective of a music recommender is to create accurate personalized recommendations from historical playlist or listening queue. Therefore, metric such as AHR@n is used to evaluate how many times (on average) a song is listed on the top-$n$ recommended songs based on surrounding context songs.</p>
+<p>Things to be taken carefully when applying Song2Vec on its own is the cold start problem, a condition where it is impossible to recommend any songs to a new user or even recommend a new song to any users. This can be efficiently handled by combining the recommender using a content-based technique, which utilizes explicit features or characteristics of the songs as demonstrated in the "Song Tags Recommender" section.</p>
+<p>Maybe you're wondering what are other implementations of Word2Vec? Here is the list for you:</p>
+<ul>
+<li>Product recommendations: Using purchase receipts in a transaction to capture an item embeddings to learn the user's purchase activity.</li>
+<li>Listing recommendations: The user activity is in the form of click data, which can be represented as a sequence of listings that a user viewed.</li>
+<li>Matching advertisement to search query: Data consist of sequential search sessions, including entered query, clicked advertisement, and search results.</li>
+</ul>
 
 </div>
 </div>
